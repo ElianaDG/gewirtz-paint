@@ -18,21 +18,21 @@ public class PaintController {
     @FXML
     private ColorPicker colorPicker;
 
-    GraphicsContext context = canvas.getGraphicsContext2D();
-
 
     public void draw(){
+        GraphicsContext context = canvas.getGraphicsContext2D();
         canvas.setOnMouseDragged(e -> {
             if(eraser.isSelected()){
                 context.clearRect(e.getX(),e.getY(),5,5);
             } else {
                 context.setFill(colorPicker.getValue());
-                context.fillRect(e.getX(), e.getY(), canvas.getWidth(), canvas.getHeight());
+                context.fillRect(e.getX(), e.getY(), 5, 5);
             }
         });
     }
 
     public void onClearCanvas(ActionEvent actionEvent){
+        GraphicsContext context = canvas.getGraphicsContext2D();
         context.clearRect(0,0, canvas.getWidth(), canvas.getHeight());
     }
 
