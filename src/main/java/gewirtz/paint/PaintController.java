@@ -23,13 +23,14 @@ public class PaintController {
         GraphicsContext context = canvas.getGraphicsContext2D();
         canvas.setOnMouseDragged(e -> {
             if(eraser.isSelected()){
-                context.clearRect(e.getX(),e.getY(),5,5);
+                context.clearRect(e.getX(),e.getY(),6,6);
             } else {
                 context.setFill(colorPicker.getValue());
-                context.fillRect(e.getX(), e.getY(), 6, 6);
+                context.fillOval(e.getX(), e.getY(), 6, 6);
             }
         });
     }
+
 
     public void onClearCanvas(ActionEvent actionEvent){
         GraphicsContext context = canvas.getGraphicsContext2D();
