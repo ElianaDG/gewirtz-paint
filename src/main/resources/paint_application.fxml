@@ -10,15 +10,15 @@
     <top>
         <ToolBar>
             <HBox alignment="CENTER" spacing="5">
-                <CheckBox fx:id="eraser"/>
+                <CheckBox fx:id="eraser" text="Eraser"/>
                 <ColorPicker fx:id="colorPicker"/>
-                <Button text="Clear Canvas" onAction="#onClearCanvas"/>
+                <Button text="Clear" onAction="#onClearCanvas"/>
             </HBox>
         </ToolBar>
     </top>
 
     <center>
-        <Canvas fx:id = "canvas" width="800" height="800"
+        <Canvas fx:id = "canvas" width="1600" height="1600"
                 onMouseDragged="#draw"/>
     </center>
 

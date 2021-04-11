@@ -1,4 +1,4 @@
-gewirtz/paint/PaintApplication.java
- gewirtz.paint.PaintApplication
 gewirtz/paint/PaintController.java
  gewirtz.paint.PaintController
+gewirtz/paint/PaintApplication.java
+ gewirtz.paint.PaintApplication

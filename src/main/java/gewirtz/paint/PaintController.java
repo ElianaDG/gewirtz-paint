@@ -26,7 +26,7 @@ public class PaintController {
                 context.clearRect(e.getX(),e.getY(),5,5);
             } else {
                 context.setFill(colorPicker.getValue());
-                context.fillRect(e.getX(), e.getY(), 5, 5);
+                context.fillRect(e.getX(), e.getY(), 6, 6);
             }
         });
     }
