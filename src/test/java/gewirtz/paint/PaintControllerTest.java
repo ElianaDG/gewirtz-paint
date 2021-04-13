@@ -30,7 +30,7 @@ public class PaintControllerTest {
         controller.onClearCanvas();
         //then
         verify(controller.canvas.getGraphicsContext2D()).clearRect(0, 0,
-                controller.canvas.getHeight(), controller.canvas .getWidth());
+                controller.canvas.getHeight(), controller.canvas.getWidth());
 
     }
 
