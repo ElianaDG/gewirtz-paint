@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.paint.Color;
@@ -11,13 +12,16 @@ import javafx.scene.paint.Color;
 public class PaintController {
 
     @FXML
-    private Canvas canvas;
+    Canvas canvas;
 
     @FXML
-    private ColorPicker colorPicker;
+    ColorPicker colorPicker;
 
     @FXML
-    private CheckBox eraser;
+    CheckBox eraser;
+
+    @FXML
+    Button clearCanvas;
 
     public void draw(){
         GraphicsContext context = canvas.getGraphicsContext2D();
@@ -31,7 +35,7 @@ public class PaintController {
         });
     }
 
-    public void onClearCanvas(ActionEvent actionEvent){
+    public void onClearCanvas(){
         GraphicsContext context = canvas.getGraphicsContext2D();
         context.clearRect(0,0, canvas.getWidth(), canvas.getHeight());
     }
