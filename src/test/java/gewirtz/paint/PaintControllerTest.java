@@ -3,7 +3,7 @@ package gewirtz.paint;
 import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.CheckBox;
+import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.paint.Color;
 import org.junit.BeforeClass;
@@ -16,7 +16,7 @@ public class PaintControllerTest {
     private PaintController controller;
     private Canvas canvas;
     private ColorPicker colorPicker;
-    private CheckBox eraser;
+    private Button clearCanvas;
 
     @BeforeClass
     public static void beforeClass() {
@@ -24,30 +24,30 @@ public class PaintControllerTest {
     }
 
     @Test
-    public void testDraw_paint(){
+    public void draw(){
         //given
-        canvas = mock(Canvas.class);
-        GraphicsContext context = canvas.getGraphicsContext2D();
+        controller = new PaintController();
+        ColorPicker colorPicker = mock(ColorPicker.class);
 
         //when
         controller.draw();
 
         //then
-        //verify that the path that the mouse was dragged on is filled w color
+        verify(colorPicker.getValue());
     }
 
 
     @Test
-    public void testOnClearCanvas(){
+    public void onClearCanvas(){
         //given
-        canvas = mock(Canvas.class);
+        Canvas canvas = mock(Canvas.class);
         GraphicsContext context = canvas.getGraphicsContext2D();
+        Button clearCanvas = mock(Button.class);
 
         //when
-        controller.onClearCanvas(mock(ActionEvent.class));
+        clearCanvas.isPressed();
 
         //then
-        //verify that the entire canvas is cleared, or just the
-        //coordinates specified to the clearCanvas method
+        verify(context.getCanvas());
     }
 }
